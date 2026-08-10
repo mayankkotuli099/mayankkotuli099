@@ -18,56 +18,60 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Create profile folder
         run: mkdir -p profile
 
-      # ---------------- GITHUB STATS ----------------
-
+      # GitHub Stats
       - name: Generate GitHub Stats
         run: |
-          curl -L \
-          "https://github-readme-stats.vercel.app/api?username=mayankkotuli099&show_icons=true&theme=dark&hide_border=true&count_private=true&hide_rank=false" \
+          curl -fL --retry 3 \
+          "https://github-stats-extended.vercel.app/api?username=mayankkotuli099&show_icons=true&theme=dark&hide_border=true&count_private=true&hide_rank=false" \
           -o profile/stats.svg
 
-      # ---------------- TOP LANGUAGES ----------------
-
+      # Top Languages
       - name: Generate Top Languages
         run: |
-          curl -L \
-          "https://github-readme-stats.vercel.app/api/top-langs/?username=mayankkotuli099&layout=compact&theme=dark&hide_border=true&langs_count=6" \
+          curl -fL --retry 3 \
+          "https://github-stats-extended.vercel.app/api/top-langs/?username=mayankkotuli099&layout=compact&theme=dark&hide_border=true&langs_count=6" \
           -o profile/top-langs.svg
 
-      # ---------------- STREAK ----------------
-
-      - name: Generate GitHub Streak
+      # Streak
+      - name: Generate Streak
         run: |
-          curl -L \
+          curl -fL --retry 3 \
           "https://streak-stats.demolab.com/?user=mayankkotuli099&theme=dark&hide_border=true&background=00000000" \
           -o profile/streak.svg
 
-      # ---------------- ACTIVITY GRAPH ----------------
-
-      - name: Generate Contribution Activity
+      # Activity Graph
+      - name: Generate Activity Graph
         run: |
-          curl -L \
+          curl -fL --retry 3 \
           "https://github-readme-activity-graph.vercel.app/graph?username=mayankkotuli099&theme=react-dark&hide_border=true&height=280" \
           -o profile/activity.svg
 
-      # ---------------- TROPHIES ----------------
-
-      - name: Generate GitHub Trophies
+      # Verify SVG files
+      - name: Verify generated files
         run: |
-          curl -L \
-          "https://github-profile-trophy.vercel.app/?username=mayankkotuli099&theme=darkhub&no-frame=true&margin-w=8&margin-h=8&column=-1&row=1" \
-          -o profile/trophies.svg
+          echo "Generated files:"
+          ls -lh profile/
 
-      # ---------------- COMMIT ----------------
+          echo "Checking SVG files..."
 
-      - name: Commit updated SVG files
+          for file in profile/*.svg; do
+            if ! grep -q "<svg" "$file"; then
+              echo "ERROR: $file is not a valid SVG"
+              head -c 300 "$file"
+              exit 1
+            fi
+          done
+
+          echo "All SVG files are valid."
+
+      # Commit
+      - name: Commit updated stats
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
