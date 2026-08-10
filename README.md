@@ -54,13 +54,6 @@
 <p align="center">
 <img src="./profile/activity.svg" alt="Contribution Activity" width="100%" height="280"/>
 </p>
-
-## 🏆 GITHUB TROPHIES
-
-<p align="center">
-<img src="./profile/trophies.svg" alt="GitHub Trophies" width="850" height="150"/>
-</p>
-
 ---
 
 ## 🚀 FEATURED PROJECTS
