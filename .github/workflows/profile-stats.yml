@@ -18,41 +18,53 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Create profile folder
         run: mkdir -p profile
 
-      # GitHub Stats
+      # ---------------- GITHUB STATS ----------------
+
       - name: Generate GitHub Stats
         run: |
           curl -fL --retry 3 \
           "https://github-stats-extended.vercel.app/api?username=mayankkotuli099&show_icons=true&theme=dark&hide_border=true&count_private=true&hide_rank=false" \
           -o profile/stats.svg
 
-      # Top Languages
+      # ---------------- TOP LANGUAGES ----------------
+
       - name: Generate Top Languages
         run: |
           curl -fL --retry 3 \
           "https://github-stats-extended.vercel.app/api/top-langs/?username=mayankkotuli099&layout=compact&theme=dark&hide_border=true&langs_count=6" \
           -o profile/top-langs.svg
 
-      # Streak
+      # ---------------- STREAK ----------------
+
       - name: Generate Streak
         run: |
           curl -fL --retry 3 \
           "https://streak-stats.demolab.com/?user=mayankkotuli099&theme=dark&hide_border=true&background=00000000" \
           -o profile/streak.svg
 
-      # Activity Graph
+      # ---------------- ACTIVITY GRAPH ----------------
+
       - name: Generate Activity Graph
         run: |
           curl -fL --retry 3 \
           "https://github-readme-activity-graph.vercel.app/graph?username=mayankkotuli099&theme=react-dark&hide_border=true&height=280" \
           -o profile/activity.svg
 
-      # Verify SVG files
+      # ---------------- REMOVE OLD TROPHY ----------------
+
+      - name: Remove broken trophy
+        run: |
+          rm -f profile/trophies.svg
+
+      # ---------------- VERIFY FILES ----------------
+
       - name: Verify generated files
         run: |
           echo "Generated files:"
@@ -70,13 +82,14 @@ jobs:
 
           echo "All SVG files are valid."
 
-      # Commit
+      # ---------------- COMMIT & PUSH ----------------
+
       - name: Commit updated stats
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add profile/*.svg
+          git add -A profile/
 
           if git diff --staged --quiet; then
             echo "No changes to commit."
