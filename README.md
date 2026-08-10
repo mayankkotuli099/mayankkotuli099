@@ -70,12 +70,6 @@ AI-powered interview preparation platform designed to simulate interviews and he
 
 ---
 
-## 📊 GitHub
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=mayankkotuli099&show_icons=true&theme=github_dark&hide_border=true)
-
----
-
 ## 🤝 Connect With Me
 
 [LinkedIn](https://www.linkedin.com/in/mayank-kotuli-445891363/) •
