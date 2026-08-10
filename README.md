@@ -16,8 +16,6 @@
 
 </div>
 
----
-
 ## 👨‍💻 ABOUT ME
 
 **Computer Science & Engineering student at ABES Engineering College**, focused on building practical software and exploring **AI, full-stack development, DSA and cybersecurity**.
@@ -29,15 +27,11 @@
 ## ⚡ TECH STACK
 
 <p align="center">
-
 <img src="https://skillicons.dev/icons?i=cpp,python,js,html,css,react,nodejs,fastapi,flutter,git,github,vscode" />
-
 </p>
 
 <p align="center">
-
-**DSA & C++** • **Full-Stack Development** • **AI Development** • **Cybersecurity & Security Analysis**
-
+<b>DSA & C++</b> • <b>Full-Stack Development</b> • <b>AI Development</b> • <b>Cybersecurity & Security Analysis</b>
 </p>
 
 ---
@@ -45,32 +39,26 @@
 ## 📊 GITHUB ANALYTICS
 
 <p align="center">
-<img src="./profile/stats.svg" height="165"/>
-<img src="./profile/top-langs.svg" height="165"/>
+<img src="./profile/stats.svg" alt="GitHub Stats" height="170"/>
+<img src="./profile/top-langs.svg" alt="Top Languages" height="170"/>
 </p>
-
----
 
 ## 🔥 CONTRIBUTION STREAK
 
 <p align="center">
-<img src="./profile/streak.svg" width="65%"/>
+<img src="./profile/streak.svg" alt="GitHub Streak" width="650" height="215"/>
 </p>
-
----
 
 ## 📈 CONTRIBUTION ACTIVITY
 
 <p align="center">
-<img src="./profile/activity.svg" width="100%"/>
+<img src="./profile/activity.svg" alt="Contribution Activity" width="100%" height="280"/>
 </p>
-
----
 
 ## 🏆 GITHUB TROPHIES
 
 <p align="center">
-<img src="./profile/trophies.svg" width="85%"/>
+<img src="./profile/trophies.svg" alt="GitHub Trophies" width="850" height="150"/>
 </p>
 
 ---
@@ -103,8 +91,6 @@
 [![Instagram](https://img.shields.io/badge/INSTAGRAM-000000?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/mayank_kotuli.tech)
 
 </p>
-
----
 
 <div align="center">
 
